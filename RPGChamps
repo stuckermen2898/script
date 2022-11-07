@@ -1,0 +1,463 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+	Name = "RPG Champs",
+	LoadingTitle = "Interface",
+	LoadingSubtitle = "by stuck",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = Main, -- Create a custom folder for your hub/game
+		FileName = "big wet sloppy willy monster"
+	},
+        Discord = {
+        	Enabled = false,
+        	Invite = "", -- The Discord invite code, do not include discord.gg/
+        	RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+        },
+	KeySystem = false, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Gamer man no have key",
+		Subtitle = "key for goofy man",
+		Note = "shut up",
+		FileName = "bro stop this key bullshit fr",
+		SaveKey = false,
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = "suckmypeen"
+	}
+})
+
+local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+local Tab2 = Window:CreateTab("Chest stuff", 4483362458) -- Title, Image
+local Tab3 = Window:CreateTab("Chest stuff 2", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+	Name = "Start Farming All Spawned Enemies",
+	Callback = function()
+	   _G.farm = true
+while _G.farm do
+    wait(1)
+for i,v in pairs(workspace.Enemies:GetChildren()) do
+v.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+wait() 
+end
+end
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Stop Farming All Spawned Enemies",
+	Callback = function()
+	       _G.farm = false
+while _G.farm do
+    wait(1)
+for i,v in pairs(workspace.Enemies:GetChildren()) do
+v.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+wait()
+end
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Start Deleting Common Chests",
+	Callback = function()
+	    
+	    _G.delet = true
+	    while _G.delet do
+	        wait(2)
+	local args = {
+    [1] = "TrashCommon",
+    [2] = "Chest"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Stop Deleting Common Chests",
+	Callback = function()
+	    
+	    _G.delet = false
+	    while _G.delet do
+	        wait(2)
+	local args = {
+    [1] = "TrashCommon",
+    [2] = "Chest"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+end
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Start Deleting Common Weapon",
+	Callback = function()
+	    
+	    _G.deletweapon = true
+	    while _G.deletweapon do
+	        wait(2)
+	local args = {
+    [1] = "TrashCommon",
+    [2] = "Weapon"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+end
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Stop Deleting Common Weapon",
+	Callback = function()
+	    
+	    _G.deletweapon = false
+	    while _G.deletweapon do
+	        wait(2)
+	local args = {
+    [1] = "TrashCommon",
+    [2] = "Weapon"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+end
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Start Deleting Rare Weapon",
+	Callback = function()
+	    
+	    _G.deletrareweapon = true
+	    while _G.deletrareweapon do
+	        wait(2)
+	local args = {
+    [1] = "TrashRare",
+    [2] = "Weapon"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+end
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Stop Deleting Rare Weapon",
+	Callback = function()
+	    
+	    _G.deletrareweapon = false
+	    while _G.deletrareweapon do
+	        wait(2)
+	local args = {
+    [1] = "TrashRare",
+    [2] = "Weapon"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Start Auto Fusing Rare Chests",
+	Callback = function()
+	    
+	    _G.fuserarechests = true
+	    while _G.fuserarechests do
+	        wait(10)
+local args = {
+    [1] = "mergeChest",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Rare Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Stop Auto Fusing Rare Chests",
+	Callback = function()
+	    
+	    _G.fuserarechests = false
+	    while _G.fuserarechests do
+	        wait(1)
+local args = {
+    [1] = "mergeChest",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Rare Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Start Auto Fusing Epic Chests",
+	Callback = function()
+	    
+	    _G.fuseepicchests = true
+	    while _G.fuseepicchests do
+	        wait(10)
+local args = {
+    [1] = "mergeChest",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Epic Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Stop Auto Fusing Epic Chests",
+	Callback = function()
+	    
+	    _G.fuseepicchests = false
+	    while _G.fuseepicchests do
+	        wait(1)
+local args = {
+    [1] = "mergeChest",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Epic Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Start Auto Fusing Legendary Chests",
+	Callback = function()
+	    
+	    _G.fuselegchests = true
+	    while _G.fuselegchests do
+	        wait(10)
+local args = {
+    [1] = "mergeChest",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Legendary Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab2:CreateButton({
+	Name = "Stop Auto Fusing Legendary Chests",
+	Callback = function()
+	    
+	    _G.fuselegchests = false
+	    while _G.fuselegchests do
+	        wait(1)
+local args = {
+    [1] = "mergeChest",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Legendary Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Start Auto Opening Rare Chests (bad)",
+	Callback = function()
+	    
+	    _G.autoopenrarechests = true
+	    while _G.autoopenrarechests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Rare Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Stop Auto Opening Rare Chests",
+	Callback = function()
+	    
+	    _G.autoopenrarechests = false
+	    while _G.autoopenrarechests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Rare Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Start Auto Opening Epic Chests",
+	Callback = function()
+	    
+	    _G.autoopenepicchests = true
+	    while _G.autoopenepicchests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Epic Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Stop Auto Opening Epic Chests",
+	Callback = function()
+	    
+	    _G.autoopenepicchests = false
+	    while _G.autoopenepicchests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Epic Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Start Auto Opening Legendary Chests",
+	Callback = function()
+	    
+	    _G.autoopenlegechests = true
+	    while _G.autoopenlegechests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Legendary Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Stop Auto Opening Legendary Chests",
+	Callback = function()
+	    
+	    _G.autoopenlegechests = false
+	    while _G.autoopenlegechests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Legendary Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Start Auto Opening Mythic Chests",
+	Callback = function()
+	    
+	    _G.autoopenmythchests = true
+	    while _G.autoopenmythchests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Mythic Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab3:CreateButton({
+	Name = "Stop Auto Opening Mythic Chests",
+	Callback = function()
+	    
+	    _G.autoopenmythchests = false
+	    while _G.autoopenmythchests do
+	        wait(5)
+local args = {
+    [1] = "equipItem",
+    [2] = game:GetService("Players").LocalPlayer.Chest:FindFirstChild("Mythic Chest")
+}
+
+game:GetService("ReplicatedStorage").Remotes.itemFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Start Rolling Supply Train",
+	Callback = function()
+	    
+	    _G.autospin = true
+	    while _G.autospin do
+	        wait(10)
+local args = {
+    [1] = "getCurrentTrain"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+
+wait(1)
+
+local args = {
+    [1] = "buySupply"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Stop Rolling Supply Train (it will buy 1 more time before stopping, be careful)",
+	Callback = function()
+	    
+	    _G.autospin = false
+	    while _G.autospin do
+	        wait(3)
+local args = {
+    [1] = "getCurrentTrain"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+
+wait(1)
+
+local args = {
+    [1] = "buySupply"
+}
+
+game:GetService("ReplicatedStorage").Remotes.actionFunctions:InvokeServer(unpack(args))
+
+end
+	end,
+})
